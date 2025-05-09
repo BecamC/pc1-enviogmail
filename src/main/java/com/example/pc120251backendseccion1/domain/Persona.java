@@ -13,6 +13,9 @@ public class Persona {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long dni;
 
+    @Enumerated(EnumType.STRING)
+    private Sexo sexo;
+
     @Column(nullable = false)
     private String nombres;
 
@@ -22,15 +25,8 @@ public class Persona {
     @Column(nullable = false)
     private Integer fechaNacimiento;
 
-    @Column(nullable = false)
-    @Enumerated(EnumType.STRING)
-    private String sexo;
-
     @Column(nullable = false, unique = true)
     private String email;
-
-    @Enumerated(EnumType.STRING)
-    private Role role;
 
     @Enumerated(EnumType.STRING)
     private EstadoCivil estadoCivil;
